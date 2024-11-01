@@ -44,9 +44,9 @@ const ModelView = ({
         enableZoom={false}
          enablePan={false}
          rotateSpeed={0.4}
-         //@ts-expect-error nothing
+         //@ts-ignore
          target={targetVector} 
-         //@ts-expect-error nothing
+         //@ts-ignore
          onEnd={()=> setRotation(controlRef?.current?.getAzimuthalAngle())}/>
         <group ref={()=>groupRef} name={`${index === 1?'small':'large'}`}
         position={[0,0,0]}>
