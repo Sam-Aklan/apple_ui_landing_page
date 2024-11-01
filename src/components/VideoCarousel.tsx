@@ -137,7 +137,7 @@ const VideoCarousel = () => {
         }
     }
 
-    const handleLoadedMeta = (i:number,e:React.SyntheticEvent<HTMLVideoElement, Event>)=>setLoadeddata(prev=>[...prev,e])
+    const handleLoadedMeta = (e:React.SyntheticEvent<HTMLVideoElement, Event>)=>setLoadeddata(prev=>[...prev,e])
     
   return (
     <>
@@ -159,7 +159,7 @@ const VideoCarousel = () => {
                                     isPlaying:true
                                 }))
                             }}
-                            onLoadedMetadata={(e)=> handleLoadedMeta(index,e)}
+                            onLoadedMetadata={(e)=> handleLoadedMeta(e)}
                             onEnded={()=> index !==3?
                                 handleProcess('video-end',index):handleProcess('video-last')
                             }>
