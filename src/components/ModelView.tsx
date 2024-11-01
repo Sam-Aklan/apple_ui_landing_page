@@ -24,7 +24,6 @@ const ModelView = ({
     controlRef,
     setRotation,
     item,
-    size
 }:Prop) => {
   const targetVector = new THREE.Vector3().set(0,0,0)
   console.log('targeVector: ', targetVector)
@@ -45,7 +44,9 @@ const ModelView = ({
         enableZoom={false}
          enablePan={false}
          rotateSpeed={0.4}
+         //@ts-expect-error ignore
          target={targetVector} 
+         //@ts-expect-error ignore
          onEnd={()=> setRotation(controlRef?.current?.getAzimuthalAngle())}/>
         <group ref={()=>groupRef} name={`${index === 1?'small':'large'}`}
         position={[0,0,0]}>
